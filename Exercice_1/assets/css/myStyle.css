@@ -3,7 +3,7 @@ html {
 }
 
 #Btn_ScrollToTop {
-    display: none;
+    display: block;
     position: fixed;
     bottom: 20px;
     right: 30px;
@@ -16,18 +16,11 @@ html {
     padding: 15px 15px 10px 15px;
     border-radius: 10px;
     font-size: 18px;
-    transform: rotate(-90deg);
-    box-shadow: -5px 0 #999
+    transform: scale(0%) rotate(-90deg);
+    transition: 0.5s;
 }
 
 #Btn_ScrollToTop:hover {
     background-color: darkcyan;
-    transform: scale(130%) rotate(-90deg);
     transition: 0.2s;
-}
-
-#Btn_ScrollToTop:active {
-    box-shadow: -2px 0 #666;
-    transition: 0.2s;
-    transform: rotate(-90deg) translateX(-3px);
 }
