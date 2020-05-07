@@ -2,6 +2,7 @@ const myBody = document.querySelector(`body`);
 const storyByP = myBody.querySelectorAll(`p`);
 let index = 0;
 
+//initialisation
 storyByP.forEach(element => {
     element.style.position = `absolute`;
     if (element != storyByP[0]) {
@@ -9,6 +10,7 @@ storyByP.forEach(element => {
     }
 });
 
+//fonction to switch paragraphe 
 switchP = (index) => {
     let element = storyByP[index];
     element.style.transition = `1s`;
@@ -21,9 +23,7 @@ switchP = (index) => {
     })
 }
 
-
-
-
+// change index with mouse scroll
 myBody.addEventListener(`wheel`, (event) => {
     let y = event.deltaY;
     if (y > 0) {
@@ -31,13 +31,11 @@ myBody.addEventListener(`wheel`, (event) => {
         if (index > storyByP.length - 1) {
             index = 0;
         }
-
     } else {
         index--;
         if (index < 0) {
             index = storyByP.length - 1;
         }
-
     }
     return switchP(index);
 }, true);
